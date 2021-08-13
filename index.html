@@ -494,37 +494,52 @@
         </button>
         <form class="form js-speaker-form">
           <b class="form-title">Оставьте свои данные, мы вам перезвоним</b>
-          <div class="form-field">
-            <label for="name" class="form-area-text">Имя</label>
-            <input type="text" name="name" id="name" class="form-area" />
-          </div>
-          <div class="form-field">
-            <label for="tel" class="form-area-text">Телефон</label>
-            <input type="tel" name="telephone" id="tel" class="form-area" />
-          </div>
-          <div class="form-field">
-            <label for="mail" class="form-area-text">Почта</label>
-            <input type="email" name="mail" id="mail" class="form-area" />
-          </div>
-          <div class="form-field coment">
-            <label for="coment" class="form-area-text">Комментарий</label>
+          <label class="form-field">
+            <div class="input-field">
+              <input type="text" name="name" class="form-area" required />
+              <svg class="icon-person" width="18" height="18">
+                <use href="./images/sprite.svg#icon-person-black"></use>
+              </svg>
+            </div>
+            <span class="form-area-text">Имя</span>
+          </label>
+          <label class="form-field">
+            <div class="input-field">
+              <input type="tel" name="telephone" class="form-area" required />
+              <svg class="icon-tel" width="18" height="18">
+                <use href="./images/sprite.svg#icon-phone-black"></use>
+              </svg>
+            </div>
+            <span class="form-area-text">Телефон</span>
+          </label>
+          <label class="form-field">
+            <div class="input-field">
+              <input type="email" name="mail" class="form-area" required />
+              <svg class="icon-email" width="18" height="18">
+                <use href="./images/sprite.svg#icon-email-black"></use>
+              </svg>
+            </div>
+            <span class="form-area-text">Почта</span>
+          </label>
+          <label class="form-field-coment">
             <textarea
               name="coment"
-              id="coment"
-              cols="30"
-              rows="12"
               placeholder="Введите текст"
               class="form-area-coment"
             ></textarea>
-          </div>
-          <div class="form-consent">
-            <input type="checkbox" name="polici" id="consent" />
-            <label for="consent" class="consent-text"
-              >Соглашаюсь с рассылкой и принимаю
-              <a href="" class="form-consent-link">Условия договора</a></label
-            >
-          </div>
-
+            <span class="form-area-text">Комментарий</span>
+          </label>
+          <label class="form-consent">
+            <input
+              type="checkbox"
+              name="polici"
+              value="consent"
+              class="checkbox"
+            />
+            <span class="icon-check"></span>
+            <span class="consent-text">Соглашаюсь с рассылкой и принимаю </span>
+            <a href="" class="form-consent-link">Условия договора</a>
+          </label>
           <button type="submit" class="hero-btn">Отправить</button>
         </form>
       </div>
