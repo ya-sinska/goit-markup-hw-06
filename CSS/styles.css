@@ -250,8 +250,6 @@ textarea {
 
   padding: 10px 32px;
   min-width: 200px;
-  margin-left: auto;
-  margin-right: auto;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -544,19 +542,44 @@ textarea {
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
+  outline: none;
+  color: #afb1b8;
+  padding-left: 16px;
+  padding-right: 16px;
 
   width: 358px;
   height: 50px;
   margin-right: 12px;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .subscription-blok .icon-send {
   margin-left: 10px;
+}
+
+.subscription-email:focus {
+  border-color: var(--accent-text-color);
 }
 .subscription-blok input::placeholder {
   font-size: var(--secondary-font-size);
   line-height: 1.25;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
+}
+.foter-btn {
+  position: relative;
+  overflow: hidden;
+  justify-content: start;
+  padding-left: 28px;
+}
+.icon-send {
+  position: absolute;
+  top: 13px;
+  right: 28px;
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.foter-btn:focus .icon-send {
+  transform: translateY(-50px);
 }
 /* Портфолио */
 
@@ -842,10 +865,11 @@ textarea {
   color: rgba(117, 117, 117, 0.5);
 }
 .form-consent {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
+  cursor: pointer;
 }
 .consent-text,
 .form-consent-link {
@@ -856,10 +880,10 @@ textarea {
 
 .consent-text {
   color: var(--primary-text-color);
-  margin-left: 8px;
 }
 .form-consent-link {
   color: var(--accent-text-color);
+  margin-left: 3px;
 }
 .checkbox {
   position: absolute;
@@ -874,10 +898,25 @@ textarea {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-.icon-check {
-  display: block;
+.consent-text::before {
+  content: "";
+  display: inline-flex;
   width: 16px;
   height: 15px;
   border: 2px solid var(--secondary-text-color);
-  border-radius: 4px;
+  border-radius: 3px;
+  margin-right: 8px;
+}
+.checkbox:checked + .consent-text::before {
+  background-color: var(--accent-text-color);
+  border-color: transparent;
+  background-image: url(../images/check.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.modal-btn {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
 }
